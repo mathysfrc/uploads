@@ -18,13 +18,13 @@
             $uploadDir = 'uploads/';
             $uploadFile = $uploadDir . uniqid() . '_' . basename($_FILES['avatar']['name']);
             $extension = pathinfo($_FILES['avatar']['name'], PATHINFO_EXTENSION);
-            $authorizedExtensions = ['jpg', 'jpeg', 'png'];
+            $authorizedExtensions = ['jpg', 'gif', 'png', 'webp'];
             $maxFileSize = 1000000;
             $errors = array();
 
             // Vérifie si l'extension est autorisée
             if (!in_array($extension, $authorizedExtensions)) {
-                $errors[] = 'Veuillez sélectionner une image de type Jpg ou Jpeg ou Png !';
+                $errors[] = 'Veuillez sélectionner une image de type Jpg ou Gif ou Png ou Webp !';
             }
 
             // Vérifie si l'image existe et si le poids est autorisé en octets
